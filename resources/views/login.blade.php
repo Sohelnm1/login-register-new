@@ -38,7 +38,9 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/register'">Register</button>
+
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

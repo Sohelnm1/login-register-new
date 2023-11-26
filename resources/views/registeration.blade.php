@@ -59,15 +59,14 @@
                 url: "/api/register",
                 data: $("#registrationForm").serialize(),
                 success: function(response) {
-                    // console.log(response);
-                    $("#message").html(
-                        "<div class='alert alert-" +
-                        (response.status === "error" ? "danger" : "success") +
-                        "'>" +
-                        response.message +
-                        "</div>"
-                    );
-
+                    if (response.status === "success") {
+                        window.location.href = "/dashboard";
+                    } else {
+                        $("#message").html(
+                            "<div class='alert alert-danger'>" + response.message +
+                            "</div>"
+                        );
+                    }
                 },
                 error: function(xhr, status, error) {
                     var message = xhr.responseText ? JSON.parse(xhr.responseText).message :
@@ -80,6 +79,7 @@
         });
     });
     </script>
+
 </body>
 
 </html>

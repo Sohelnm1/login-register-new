@@ -17,8 +17,13 @@ use App\Http\Controllers\Usercontroller;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-    Route::post('/logout', [UserController::class, 'logout']);
 });
 Route::post('/register', [Usercontroller::class, "register"]);
 
 Route::post('/login', [Usercontroller::class, "login"]);
+
+Route::middleware(['auth'])->group(function () {
+
+});
+
+Route::post('/logout', [UserController::class, 'logout']);
